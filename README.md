@@ -50,4 +50,64 @@ https://docs.servicenow.com/bundle/rome-it-asset-management/page/product/asset-m
 https://docs.servicenow.com/bundle/rome-servicenow-platform/page/product/configuration-management/concept/c_ITILConfigurationManagement.html
 
 ## Import Sets
+
+Import Sets is a powerful tool used to import data from various data sources, and then map that data into ServiceNow tables.
+
+The Import Sets table acts as a staging area for records imported from a data source.
+
+Note: Data should not be imported in extremely large chunks. Creating an extremely large import set can cause delays and system outages.
+![image](https://user-images.githubusercontent.com/12488769/148668060-925531f0-197f-453f-a50a-1da15f7d5d4e.png)
+
+## Transform MAP
+A Transform Map is a set of field maps that determine the relationships between fields in an Import Set and fields in an existing ServiceNow table (such as Incidents or Users)
+
+
+Once defined, existing Transform Maps can be reused for mapping data from an import set to a ServiceNow table
+
+
+Every import operation to a ServiceNow production table requires at least one transform map that will be associated with an Import Set
+
+![image](https://user-images.githubusercontent.com/12488769/148668077-f19b0281-5640-4ca7-bc01-490a0ee926c2.png)
+
+System Import Set- Steps
+Load Data: Data source records are references imported data or location to retrieve data from.
+
+
+Create Transform Map: is used to specify how data uploaded into an Import Set should be transferred onto production tables. 
+
+
+Run Transform: Transform map scripts allow for customization of import operations using a robust programming interface that can be used to introduce advanced logic. 
+
+## Load Data
+![image](https://user-images.githubusercontent.com/12488769/148668110-21a9cdaa-62b7-46bb-aa29-e45addc01f29.png)
+
+## Transform Map
+![image](https://user-images.githubusercontent.com/12488769/148668116-5c080ef4-8af8-43b3-8700-036ff399eb62.png)
+
+### Mapping Assist
+![image](https://user-images.githubusercontent.com/12488769/148668126-6ca24d39-16fd-4e76-89f0-dd50793c3ccb.png)
+
+![image](https://user-images.githubusercontent.com/12488769/148668132-911d4519-eaf6-43dd-ac9a-f6b563b69b18.png)
+
+### Coalesce
+
+### Choice Action
+- create:  creates a new reference field record if a matching record does not exist.
+- ignore: ignores new records in the reference field and completes processing of all other fields in the transform map.
+- reject: stops the transform for the entire record.
+
+Note: The field map only displays the Choice action field for reference fields.
+
+## Run Transform
+![image](https://user-images.githubusercontent.com/12488769/148668141-668bdeb4-e11f-4ed6-9852-388da624fe03.png)
+
+![image](https://user-images.githubusercontent.com/12488769/148668143-072afa90-4a4d-43a5-9b30-f2137290ff7b.png)
+
+
+
+
+
+
+
+
 https://docs.servicenow.com/bundle/rome-platform-administration/page/administer/import-sets/concept/c_ImportDataUsingImportSets.html
